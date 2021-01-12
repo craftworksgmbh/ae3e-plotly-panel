@@ -5,6 +5,7 @@
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
+    "devbuild": "grafana-toolkit plugin:dev",
     "dev": "grafana-toolkit plugin:dev --watch",
     "sign": "npx @grafana/toolkit plugin:sign",
     "md5": "certutil -hashfile README.md MD5"
