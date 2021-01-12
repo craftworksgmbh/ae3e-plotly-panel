@@ -78,7 +78,59 @@ export class SimplePanel extends PureComponent<Props> {
 
     //console.log(merge(this.props.options.data,parameters.data,{ arrayMerge: combineMerge }));
     //let layout = { ...this.props.options.layout, autosize: true, paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'transparent', height: this.props.height, title: this.props.options.title }
-    let layout = { ...this.props.options.layout, autosize: true, height: this.props.height };
+
+    const tickFont = {
+        color: '#c7d0d9',
+        family: 'Roboto,Helvetica Neue,Arial,sans-serif;',
+        size: '10',
+    };
+
+    const bgColor = '#141619';
+    const gridColor = '#444';
+    const defaultLayout = {
+      font: {
+        color: 'darkgrey',
+      },
+      paper_bgcolor: bgColor,
+      plot_bgcolor: bgColor,
+      margin: {
+        t: 0,
+        b: 20,
+        l: 20,
+        r: 20,
+      },
+      hoverdistance: -1,
+      hoverlabel: {
+        bgcolor: '#141414',
+        font: {
+          color: '#c7d0d9',
+        },
+      },
+      hovermode: 'x unified',
+      xaxis: {
+        type: 'linear',
+        autorange: true,
+        gridcolor: gridColor,
+        gridwidth: 1,
+        linewidth: 1,
+        showgrid: true,
+        spikecolor: '#6f0414',
+        spikedash: 'solid',
+        spikesnap: 'cursor',
+        spikethickness: 1,
+        tickfont: tickFont,
+      },
+      yaxis: {
+        autorange: true,
+        gridcolor: gridColor,
+        gridwidth: 1,
+        linewidth: 1,
+        tickfont: tickFont,
+        type: 'linear',
+      },
+    };
+
+    let layout = { ...this.props.options.layout, ...defaultLayout, autosize: true, height: this.props.height };
 
     return (
       <Plot
