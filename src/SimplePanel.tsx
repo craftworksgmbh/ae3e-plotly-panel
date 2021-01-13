@@ -47,6 +47,7 @@ export class SimplePanel extends PureComponent<Props> {
         parameters = [this.props.options.data, this.props.options.layout, this.props.options.config];
       }
     } catch (e) {
+      parameters = [this.props.options.data, this.props.options.layout, this.props.options.config];
       console.log(e);
     }
 
@@ -80,9 +81,9 @@ export class SimplePanel extends PureComponent<Props> {
     //let layout = { ...this.props.options.layout, autosize: true, paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'transparent', height: this.props.height, title: this.props.options.title }
 
     const tickFont = {
-        color: '#c7d0d9',
-        family: 'Roboto,Helvetica Neue,Arial,sans-serif;',
-        size: '10',
+      color: '#c7d0d9',
+      family: 'Roboto,Helvetica Neue,Arial,sans-serif;',
+      size: '10',
     };
 
     const bgColor = '#141619';
